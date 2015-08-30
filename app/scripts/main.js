@@ -20,6 +20,7 @@ var Spotifylish = {
 
         if (mainPageNode && !mainPageNode.querySelector("#spotifySlideshow")) {
             var main = mainPageNode.querySelector("#main"),
+                mainNav = mainPageNode.querySelector("#main-nav"),
                 mainCheckerTimer,
                 animationTimer;
             
@@ -35,6 +36,9 @@ var Spotifylish = {
                     main.onmouseover  = function(){
                         body.classList.remove("unfocus");
                     };
+
+                    mainNav.onmouseout = main.onmouseout;
+                    mainNav.onmouseover = main.onmouseover;
                 }
             }, 100);
 
