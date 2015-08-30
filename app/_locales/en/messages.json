@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Spotifylish",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Stylish Spotify",
+    "description": "The description of the application"
+  }
+}

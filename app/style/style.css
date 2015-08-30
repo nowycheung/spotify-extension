@@ -1,0 +1,136 @@
+/* override the min-width */
+#wrapper {
+    min-width: inherit!important;
+}
+
+/* hide the disabled button for cleaner UI */
+button.button.disabled {
+    display: none;
+}
+
+@media screen and (min-width: 451px) {
+
+    body.unfocus.playing .main-menu.narrow-menu,
+    body.unfocus.playing .main-menu.narrow-menu *{
+        transition: all 1s;
+        /*transition-delay: 500ms;*/
+        opacity: 0;
+    }
+
+    body.unfocus.playing.slideshow-ready #main{
+        left: 0px;
+    }
+
+    body.unfocus.playing.slideshow-ready #main > *{
+        display: none;
+    }
+
+    body #suggest-area,
+    body.unfocus #suggest-area.show {
+        display: none!important;
+    }
+
+    body #suggest-area.show {
+        display: block!important;
+    }
+
+}
+
+/* Mini player */
+@media screen and (max-width: 450px) {
+    #wrapper > * {
+        opacity: 0;
+    }
+    #now-playing {
+        opacity: 1;
+        width: 100%!important;
+    }
+
+    #wrap,
+    #cover-art .sp-image {
+        width: 100%!important;
+    }
+}
+
+/* Slideshow related style */
+#spotifySlideshow {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+body.unfocus.playing.slideshow-ready #main #spotifySlideshow {
+    display: block;
+}
+
+@-webkit-keyframes animatedRandom1 {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 90% 90%;
+        -webkit-transform: scale(2);
+        transform: scale(2);
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform-origin: 50% 50%;
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+@-webkit-keyframes animatedRandom2 {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 10% 90%;
+        transform: scale(2);
+        -webkit-transform: scale(2);
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform-origin: 50% 50%;
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+@-webkit-keyframes animatedRandom3 {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 90% 10%;
+        transform: scale(2);
+        -webkit-transform: scale(2);
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform-origin: 50% 50%;
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+@-webkit-keyframes animatedRandom4 {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 10% 10%;
+        transform: scale(2);
+        -webkit-transform: scale(2);
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform-origin: 50% 50%;
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
