@@ -1,5 +1,9 @@
+
 # spotify-slideshow
 Chrome Extension for showing slideshow in Spotify.
+![Screenshot]
+(https://github.com/nowycheung/spotify-slideshow/raw/master/screenshot.png)
+
 
 ## How to install
 1. Download ZIP or clone this repo.
