@@ -8,7 +8,7 @@ html.setAttribute("id", "spotifylish");
 
 var Spotifylish = {
     yahooImageApiUrl: "https://images.search.yahoo.com/images/view?o=js&p=",
-    flickImageApiUrl: "https://api.flickr.com/services/rest?extras=url_c%2Curl_z&per_page=100&page=1&date=2015-08-29&method=flickr.interestingness.getList&api_key=c571d4f48cdf1b83c85935afc6a69560&format=json&nojsoncallback=1",
+    flickImageApiUrl: "https://api.flickr.com/services/rest?extras=url_c%2Curl_z&per_page=100&page=1&method=flickr.interestingness.getList&api_key=875eabc844125494f08d1fc16b35bcd1&format=json&nojsoncallback=1",
     imagesList: [],
     currentImageIndex: 0,
     animationSpeed: 10, // seconds
@@ -61,6 +61,13 @@ var Spotifylish = {
             // Load image immediately
             self.loadImage();
         }
+    },
+    dateToYMD: function(date) {
+        date = date || new Date();
+        var d = date.getDate();
+        var m = date.getMonth() + 1;
+        var y = date.getFullYear();
+        return y + "-" + (m <= 9 ? "0" + m : m) + "-" + (d <= 9 ? "0" + d : d);
     },
     randomFromTo: function(from, to) {
         return Math.floor(Math.random() * (to - from + 1) + from);
@@ -122,7 +129,8 @@ var Spotifylish = {
         */
 
         // Using Flickr image
-        this.ajax(this.flickImageApiUrl, function (responseText) {
+        var url = this.flickImageApiUrl + "&date=2015-08-28";   // date is harcoded temporary
+        this.ajax(url, function (responseText) {
             var data = JSON.parse(responseText);
             if (data.photos && Array.isArray(data.photos.photo)) {
                 self._imageLoaded = true;
